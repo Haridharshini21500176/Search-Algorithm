@@ -19,27 +19,79 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
-
+''' 
+Program for linear search method to match the item in a list
+Developed by:Haridharshini.S
+RegisterNumber:21500176 
+'''
+def linearSearch(array,n,k):
+    # write your code for linear search
+    for i in range(0,n):
+        if array[i]==k:
+            return i
+    return -1
+    
+array = eval(input())
+# sort the array
+array.sort()
+print(array)
+k = eval(input()) # k-item to be seared for
+# get the length of array and store in the variable n
+n=len(array)
+result =linearSearch(array,n,k) 
+# use the function for linear search
+# use if-else to print sorted array and "Element not found" if the item is not present in the list otherwise print sorted array and "Element found at index: ", result
+if result>=0:
+    print("Element found at index: ",result)
+else:
+    print("Element not found")
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by: Haridharshini.S
+RegisterNumber:21500176 
+'''
+def binarySearchIter(array, k, low, high):
+    # Write your code here to find the middle value and check if the desired item is above or below the middle value
+    while (low<=high):
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid+1
+    return -1
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search (recursive Method).
+Developed by:Haridharshini.S
+RegisterNumber:21500176 
+'''
+def BinarySearch(arr, k, low, high):
+    # Write your code here for binary search using recursive method
+    if high>=low:
+        mid=low+(high-low)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]<k:
+           return BinarySearch(arr, k, mid+1, high)
+        else:
+           return BinarySearch(arr, k, low, mid+1)
+    
+    return -1
 ```
-## Sample Input and Output
+## Output:
+
+![output](./output1.png)
+
+![output](./output2.png)
+
+![output](./output3.png)
 
 
 
